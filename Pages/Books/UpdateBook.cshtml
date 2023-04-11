@@ -1,0 +1,80 @@
+﻿@page
+@model WebApplication1.Pages.Books.UpdateBookModel
+@{
+}
+@if(Model.ErrorMessage.Length>0)
+{
+    <div id="error-div">
+        <br><div class="alert-danger">@Model.ErrorMessage</div><br />
+        <button type="button" onclick="
+           document.getElementById('error-div').remove() ">
+</button>
+    </div>
+    
+}
+@if (Model.SuccessMessage.Length > 1)
+{
+    <div id="Success-div">
+        <br><div class="alert-success">@Model.SuccessMessage</div><br />
+        <button type="button" onclick="
+           document.getElementById('Success-div').remove() ">
+        </button>
+    </div>
+
+}
+<h1>Update Book</h1>
+<div>
+    <form method="post">
+        <input type="hidden" name="id" value="@Model.Book.Id" />
+
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Book Title</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="title" value="@Model.Book.BookTitle" required />
+            </div>
+        </div>
+        <div class="row mb-6">
+            <label class="col-sm-2 col-form-label">Book category</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" value="@Model.Book.category" name="category" required />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Book Author</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" value="@Model.Book.Author" name="Author" required />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Book Pubication</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" value="@Model.Book.Pubication" name="Pubication" required />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Book publish_date</label>
+            <div class="col-sm-5">
+               
+                <input type="date" class="form-control" name="publish_date" value="@Model.Book.publish_date.ToString("yyyy-MM-dd")" required  />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Book Price</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="Price" value="@Model.Book.Price" required />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-5">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+            <br />
+            <div class="col-sm-5">
+                <a class="btn btn-danger" href="/">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

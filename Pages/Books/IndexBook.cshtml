@@ -17,6 +17,7 @@
             <th>BOOK AUTHOR</th>
             <th>BOOK PUBLICATION</th>
             <th>BOOK PRICE</th>
+            <th>ACTION</th>
         </tr>
 
 </thead>
@@ -29,6 +30,11 @@
                 <td>@book.Author</td>
                 <td>@book.Pubication</td>
                 <td>@book.Price</td>
+                <td>
+                    <a class="btn btn-primary btn-small" href="/Books/UpdateBook?BookCode=@book.Id">Edit</a>&nbsp;
+                    <a class="btn btn-danger btn-small" href="">Delete</a>
+
+                </td>
             </tr>
         }
 </tbody>
