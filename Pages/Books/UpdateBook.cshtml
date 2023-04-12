@@ -2,15 +2,15 @@
 @model WebApplication1.Pages.Books.UpdateBookModel
 @{
 }
-@if(Model.ErrorMessage.Length>0)
+@if (Model.ErrorMessage.Length > 0)
 {
     <div id="error-div">
         <br><div class="alert-danger">@Model.ErrorMessage</div><br />
         <button type="button" onclick="
            document.getElementById('error-div').remove() ">
-</button>
+        </button>
     </div>
-    
+
 }
 @if (Model.SuccessMessage.Length > 1)
 {
